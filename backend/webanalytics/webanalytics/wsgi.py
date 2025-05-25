@@ -1,5 +1,4 @@
-"""
-WSGI config for webanalytics project.
+"""WSGI config for webanalytics project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

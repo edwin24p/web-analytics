@@ -1,0 +1,27 @@
+
+src = ["analytics_api", "pageviews", "webanalytics"]
+
+
+
+lint.select = [
+  "E",    # pycodestyle
+  "W",    # pycodestyle warnings
+  "F",    # pyflakes
+  "D",    # pydocstyle
+  "I",    # isort
+  "B",    # flake8-bugbear
+  "N",    # pep8-naming
+]
+
+
+lint.ignore = ["D100", "D101"]  # e.g., ignore missing module/class docstring warnings
+
+
+line-length = 100
+
+[per-file-ignores]
+"**/tests/*.py" = ["D100", "D101", "D102", "D103", "D104", "D105", "D106"]
+"**/test_*.py" = ["D100", "D101", "D102", "D103", "D104", "D105", "D106"]
+"**/migrations/*.py" = ["E501"]
+
+

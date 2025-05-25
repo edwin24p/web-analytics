@@ -1,6 +1,7 @@
-from django.urls import path, include
-from .views import RegisterView
+from django.urls import include, path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+from .views import RegisterView
 
 urlpatterns =[
     path('user/register/', RegisterView.as_view(), name='register'),

@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User
 from rest_framework import generics
+from rest_framework.permissions import AllowAny
+
 from .serializers import RegisterSerializer
-from rest_framework.permissions import IsAuthenticated, AllowAny
+
 
 # Create your views here.
 class RegisterView(generics.CreateAPIView):
@@ -10,8 +12,7 @@ class RegisterView(generics.CreateAPIView):
     permission_classes = [AllowAny]
 
     def create(self, request, *args, **kwargs):
-        # Even though we made password write only we pop it from the response just in case
+        """Remove password from return data just in case."""
         response= super().create(request, *args, **kwargs)
         response.data.pop("password", None)
         return response
-    

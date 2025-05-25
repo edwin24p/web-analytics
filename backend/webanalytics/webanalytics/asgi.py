@@ -1,5 +1,4 @@
-"""
-ASGI config for webanalytics project.
+"""ASGI config for webanalytics project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
