@@ -28,7 +28,7 @@ jobs:
       PYTHONPATH: backend/webanalytics
       DEBUG: "False"
       SECRET_KEY: "testing-secret-key"
-      DJANGO_SETTINGS_MODULE: backend.webanalytics.settings
+      DJANGO_SETTINGS_MODULE: webanalytics.settings
       DATABASE_URL: postgres://webanalytics_user:password123@localhost:5432/webanalytics
 
     steps:
