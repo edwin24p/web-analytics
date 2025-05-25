@@ -14,9 +14,9 @@ jobs:
       postgres:
         image: postgres:16
         env:
-          POSTGRES_DB: webanalytics
-          POSTGRES_USER: webuser
-          POSTGRES_PASSWORD: password
+          POSTGRES_DB: webanalytics_user
+          POSTGRES_USER: webanalytics_user
+          POSTGRES_PASSWORD: password123
         ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
@@ -27,7 +27,8 @@ jobs:
     env:
       DEBUG: "False"
       SECRET_KEY: "testing-secret-key"
-      DATABASE_URL: postgres://webuser:password@localhost:5432/webanalytics
+      DJANGO_SETTINGS_MODULE: backend.webanalytics.settings
+      DATABASE_URL: postgres://webanalytics_user:password123@localhost:5432/webanalytics
 
     steps:
       - uses: actions/checkout@v3
