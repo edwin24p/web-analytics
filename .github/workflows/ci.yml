@@ -25,6 +25,7 @@ jobs:
           --health-retries 5
 
     env:
+      PYTHONPATH: backend/webanalytics
       DEBUG: "False"
       SECRET_KEY: "testing-secret-key"
       DJANGO_SETTINGS_MODULE: backend.webanalytics.settings
@@ -44,6 +45,7 @@ jobs:
           pip install -r backend/webanalytics/requirements.txt
 
       - name: Run tests with pytest
+        working-directory: backend/webanalytics
         run: |
           pytest
 
